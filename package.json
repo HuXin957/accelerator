@@ -1,0 +1,45 @@
+{
+  "name": "accelerator",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "author": "huqiang",
+  "dependencies": {
+    "@react-native-community/async-storage": "^1.12.1",
+    "@react-native-community/masked-view": "^0.1.11",
+    "@react-native-community/viewpager": "^5.0.11",
+    "@react-navigation/bottom-tabs": "^5.11.10",
+    "@react-navigation/core": "^5.15.3",
+    "@react-navigation/native": "^5.9.4",
+    "@react-navigation/stack": "^5.14.4",
+    "mobx": "^6.2.0",
+    "mobx-react": "^7.1.0",
+    "moment": "^2.29.1",
+    "prop-types": "^15.7.2",
+    "react": "17.0.2",
+    "react-native": "0.66.3",
+    "react-native-gesture-handler": "^1.10.3",
+    "react-native-safe-area-context": "^3.2.0",
+    "react-native-screens": "^3.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/runtime": "^7.16.3",
+    "@react-native-community/eslint-config": "^3.0.1",
+    "babel-jest": "^27.4.2",
+    "babel-plugin-root-import": "^6.6.0",
+    "eslint": "^8.3.0",
+    "jest": "^27.4.3",
+    "metro-react-native-babel-preset": "^0.66.2",
+    "react-test-renderer": "17.0.2"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
