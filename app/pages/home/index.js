@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, TextInput, ScrollView, StatusBar} from 'react-native';
 import y from '../../utils/style';
+import Calendar from "../../components/calendar";
 
 
 export default class index extends React.Component {
@@ -11,7 +12,12 @@ export default class index extends React.Component {
   render() {
     return (
       <View>
-        <Text>3</Text>
+        <Calendar
+          isShowAll={false}
+          renderItem={()=>{
+
+          }}
+        />
       </View>
     );
   }

@@ -11,13 +11,15 @@ const navigationRef = React.createRef();
 const Stack = createStackNavigator();
 
 function AppNavigator() {
-  return (<NavigationContainer ref={navigationRef}>
-    <Stack.Navigator
-      initialRouteName="Home"
-    >
-      {routes.map(item => <Stack.Screen key={item.name} {...item} options={{headerShown: false}}/>)}
-    </Stack.Navigator>
-  </NavigationContainer>)
+  return (
+    <NavigationContainer ref={navigationRef}>
+      <Stack.Navigator
+        initialRouteName="Home"
+      >
+        {routes.map(item => <Stack.Screen key={item.name} {...item} options={{headerShown: false}}/>)}
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
 }
 
 export default AppNavigator;
