@@ -1,5 +1,5 @@
 import React from 'react';
-import y from '../../utils/style';
+import y from 'react-native-line-style';
 import {SafeAreaView} from "react-native-safe-area-context";
 import {statusHeight} from '../../utils/platform'
 

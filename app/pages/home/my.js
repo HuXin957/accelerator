@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, TextInput, ScrollView, StatusBar} from 'react-native';
-import y from '../../utils/style';
+import y from 'react-native-line-style';
 
 
 export default class index extends React.Component {
