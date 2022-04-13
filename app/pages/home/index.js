@@ -13,28 +13,27 @@ class Home extends React.Component {
     }
   }
 
-  componentDidMount() {
-
-  }
-
 
   render() {
 
     return (
-      <View style={[y.mt(20)]}>
-        <Grid
-          gutter={[10, 8]}
-          marginLR={20}
-          dataSource={data}
-          columnCount={3}
-          renderCell={(item) => {
-            return (
-              <View style={[y.ujc,y.uac,y.ba(1)]}>
-                <Text>{item.name}</Text>
-              </View>
-            )
-          }}
-        />
+      <View style={[y.mt(10)]}>
+          <Grid
+            gutter={[10, 10]}
+            marginLR={20}
+            dataSource={data}
+            columnCount={3}
+            renderCell={(item) => {
+              return (
+                <View style={[y.ujc, y.uac, y.ba(1)]}>
+                  <Text>{item.name}</Text>
+                </View>
+              )
+            }}
+          />
+        <Text onPress={() => {
+          this.props.navigation.navigate('ImageList')
+        }}>sfmodjfio</Text>
       </View>
     );
   }
@@ -48,7 +47,10 @@ const data = [
   {name: "张三", age: 19},
   {name: "张三", age: 19},
   {name: "张三", age: 19},
-  {name: "张三", age: 19}
+  {name: "张三", age: 19},
+  {name: "张三", age: 19},
+  {name: "张三", age: 19},
+  {name: "张三", age: 19},
 ]
 
 

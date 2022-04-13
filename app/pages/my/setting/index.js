@@ -1,20 +1,24 @@
 import React from 'react';
 import {View, Text, TextInput, ScrollView, StatusBar} from 'react-native';
+import withMixin from "app/utils/withMixin";
 
-
-export default class index extends React.Component {
+class Setting extends React.Component {
   constructor(props) {
     super(props);
   }
 
+
   render() {
     return (
       <View>
-        <Text>3</Text>
+        <Text>setting</Text>
       </View>
     );
   }
 }
+
+export default withMixin(Setting)
+
 
 
 

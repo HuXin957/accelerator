@@ -1,4 +1,5 @@
-import {Platform, NativeModules, StatusBar} from 'react-native';
+import {Platform, StatusBar} from 'react-native';
+import {getStatusBarHeight} from 'react-native-iphone-x-helper'
 
 export const OS = Platform.OS;
 
@@ -8,7 +9,6 @@ export const isAndroid = Platform.OS === 'android';
 
 export const statusHeight = setStatusHeight();
 
-import {getStatusBarHeight} from 'react-native-iphone-x-helper'
 
 function setStatusHeight() {
   if (isIOS) {
