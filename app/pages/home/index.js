@@ -4,10 +4,12 @@ import y from 'react-native-line-style';
 import {Grid} from 'app/components';
 import {statusHeight} from 'app/utils/platform';
 import withMixin from 'app/utils/withMixin';
+import userStore from 'app/store/user';
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       value: 2
     }
@@ -18,22 +20,22 @@ class Home extends React.Component {
 
     return (
       <View style={[y.mt(10)]}>
-          <Grid
-            gutter={[10, 10]}
-            marginLR={20}
-            dataSource={data}
-            columnCount={3}
-            renderCell={(item) => {
-              return (
-                <View style={[y.ujc, y.uac, y.ba(1)]}>
-                  <Text>{item.name}</Text>
-                </View>
-              )
-            }}
-          />
+        <Grid
+          gutter={[10, 10]}
+          marginLR={20}
+          dataSource={data}
+          columnCount={3}
+          renderCell={(item) => {
+            return (
+              <View style={[y.ujc, y.uac, y.ba(1)]}>
+                <Text>{item.name}</Text>
+              </View>
+            )
+          }}
+        />
         <Text onPress={() => {
           this.props.navigation.navigate('ImageList')
-        }}>sfmodjfio</Text>
+        }}>sdfsdfsdf{this.state.value}</Text>
       </View>
     );
   }

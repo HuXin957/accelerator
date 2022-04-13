@@ -16,28 +16,30 @@ class ImageList extends React.Component {
   componentDidMount() {
 
     // this._getImages()
-    this._getAlbums()
+    // this._getAlbums()
   }
 
-  _getImages = () => {
-    CameraRoll.getPhotos({
-      first: 20,
-      assetType: 'Photos',
-      groupName: ''
-    }).then(res => {
-      console.log('images', res)
-    })
+  _getImages = async () => {
+    try {
+      const res = await CameraRoll.getPhotos({
+        first: 20,
+        assetType: 'Photos',
+        groupName: ''
+      })
+
+    } catch (e) {
+
+    }
 
   }
 
   _getAlbums = () => {
-    // Permissions.PHOTO_LIBRARY().catch(e => {
-    //
-    //   if (e.code === RESULTS.BLOCKED) {
-    //     Permissions.openSettings();
-    //   }
-    //   throw e;
-    // });
+    Permissions.PHOTO_LIBRARY().catch(e => {
+      if (e.code === RESULTS.BLOCKED) {
+        Permissions.openSettings();
+      }
+      throw e;
+    });
     CameraRoll.getAlbums({
       assetType: 'All',
     }).then(albums => {
@@ -47,7 +49,7 @@ class ImageList extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style={[y.bgColor('red')]}>
         <Text>imageList</Text>
       </View>
     )

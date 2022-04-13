@@ -1,6 +1,7 @@
 import ImageList from 'app/pages/common/imageList';
 import Home from 'app/pages/home';
-import My from 'app/pages/home/my';
+import Login from 'app/pages/login';
+import My from 'app/pages/my';
 import Setting from 'app/pages/my/setting';
 
 const routes = [
@@ -10,6 +11,9 @@ const routes = [
   },{
     name: "Home",
     component: Home
+  },{
+    name: "Login",
+    component: Login
   },{
     name: "My",
     component: My

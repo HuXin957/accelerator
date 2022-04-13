@@ -12,7 +12,7 @@ function AppNavigator() {
   return (
     <NavigationContainer ref={navigationRef}>
       <Stack.Navigator
-        initialRouteName="Home"
+        initialRouteName="Login"
       >
         {routes.map(item => <Stack.Screen key={item.name} {...item} options={{headerShown: false}}/>)}
       </Stack.Navigator>
