@@ -5,21 +5,24 @@ import {Grid} from 'app/components';
 import {statusHeight} from 'app/utils/platform';
 import withMixin from 'app/utils/withMixin';
 import userStore from 'app/store/user';
+import {SearchBar} from 'react-native-screens';
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      value: 2
-    }
   }
 
 
   render() {
 
     return (
-      <View style={[y.mt(10)]}>
+      <View>
+        <SearchBar
+          hideWhenScrolling={true}
+          obscureBackground={'red'}
+          autoCapitalize={'words'}
+          placeholder={'please'}
+          inputType={'phone'}/>
         <Grid
           gutter={[10, 10]}
           marginLR={20}
@@ -28,14 +31,14 @@ class Home extends React.Component {
           renderCell={(item) => {
             return (
               <View style={[y.ujc, y.uac, y.ba(1)]}>
-                <Text>{item.name}</Text>
+                <Text>{item.name}fsdfadfds</Text>
               </View>
             )
           }}
         />
         <Text onPress={() => {
           this.props.navigation.navigate('ImageList')
-        }}>sdfsdfsdf{this.state.value}</Text>
+        }}>跳转</Text>
       </View>
     );
   }

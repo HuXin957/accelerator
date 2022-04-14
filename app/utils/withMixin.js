@@ -50,9 +50,7 @@ const withMixin = (WrapComponent, options = {}) => {
           edges={options.edges || ['bottom']}
           mode={'padding'}
           style={[y.pt_(statusHeight), y.uf1, y.bgColor('#fff'), y.upr]}>
-          <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-            {super.render()}
-          </TouchableWithoutFeedback>
+          {super.render()}
         </SafeAreaView>
       )
     }
