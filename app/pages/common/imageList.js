@@ -28,7 +28,7 @@ class ImageList extends React.Component {
   }
 
   componentDidMount() {
-    // this.listRef._getData()
+    this.listRef.load()
     // this._getImages()
     // this._getAlbums()
   }
@@ -61,34 +61,48 @@ class ImageList extends React.Component {
     });
   }
 
-  api = () => {
+  api = (pageIndex) => {
+    const data = [
+      {name: 'zs'},
+      {name: 'zs'},
+      {name: 'zs'},
+      {name: 'zs'},
+      {name: 'zs'},
+      {name: 'zs'},
+      {name: 'zs'},
+      {name: 'zs'},
+      {name: 'zs'},
+      {name: 'zs'},
+      {name: 'zs'},
+      {name: 'zs'},
+      {name: 'zs'},
+      {name: 'zs'},
+      {name: 'zs'},
+      {name: 'zs'},
+      {name: 'zs'},
+      {name: 'zs'},
+      {name: 'z32s'},
+    ]
     return new Promise((resolve => {
       setTimeout(() => {
-        resolve([
-          {name: 'zs'},
-          {name: 'zs'},
-          {name: 'zs'},
-          {name: 'zs'},
-          {name: 'zs'},
-          {name: 'zs'},
-          {name: 'zs'},
-          {name: 'zs'},
-        ])
+        resolve({
+          data: data.slice((pageIndex - 1) * 10, 10 * pageIndex),
+          total: data.length
+        })
       }, 1000)
     }))
   }
 
-  getData = async (pageSize, pageIndex) => {
+  getData = async (pageIndex, pageSize) => {
 
-    const res = await this.api()
+    const {data, total} = await this.api(pageIndex, pageSize)
 
-    return {data: res, total: 999}
+    return {data, total}
   }
 
   render() {
     return (
-      <View>
-        <Text>hello</Text>
+      <View style={[y.uf1]}>
         <List
           ref={ref => this.listRef = ref}
           getData={this.getData}

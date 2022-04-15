@@ -18,7 +18,9 @@ const withMixin = (WrapComponent, options = {}) => {
     }
 
     componentDidMount() {
-      super.componentDidMount && super.componentDidMount();
+      if(this.isPass){
+        super.componentDidMount && super.componentDidMount();
+      }
     }
 
 

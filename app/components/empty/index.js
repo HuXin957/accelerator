@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Text, View} from "react-native";
-
+import y from 'react-native-line-style'
 
 const EmptyData = ({code}) => {
   switch (code) {
@@ -17,7 +17,7 @@ export default EmptyData;
 
 const NoData = () => {
   return (
-    <View>
+    <View style={[y.uf1]}>
       <Text>暂无数据</Text>
     </View>
   )
@@ -25,7 +25,7 @@ const NoData = () => {
 
 const NetError = () => {
   return (
-    <View>
+    <View style={[y.uac]}>
       <Text>网络错误</Text>
     </View>
   )
