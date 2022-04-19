@@ -1,3 +1,4 @@
+import DetailDemo from 'app/pages/common/DetailDemo';
 import ImageList from 'app/pages/common/imageList';
 import Home from 'app/pages/home';
 import Login from 'app/pages/login';
@@ -6,6 +7,9 @@ import Setting from 'app/pages/my/setting';
 
 const routes = [
   {
+    name: "DetailDemo",
+    component: DetailDemo
+  },{
     name: "ImageList",
     component: ImageList
   },{

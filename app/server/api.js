@@ -34,18 +34,11 @@ service.interceptors.response.use(
     if (res.status === 200) {
       return Promise.resolve(res.data);
     } else {
-      return Promise.reject(res.data.msg);
+      return Promise.reject(res.data);
     }
   },
   err => {
-    if (err.response) {
-      const tips = err.response.status in httpCode
-        ? httpCode[err.response.status]
-        : err.response.data.message;
-      return Promise.reject(tips);
-    }
-    console.dir(47,JSON.stringify(err))
-    return Promise.resolve(new Error("请求超时, 请刷新重试"))
+    return Promise.reject(err)
   }
 );
 

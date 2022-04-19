@@ -104,6 +104,7 @@ class List extends PureComponent {
         })
       })
       .catch(err => {
+        console.log(107,err)
         this.setState({
           statusCode: err.code
         });
@@ -213,7 +214,6 @@ class List extends PureComponent {
     return (
       <FlatList
         data={data}
-        style={[y.w100]}
         keyExtractor={keyExtractor}
         renderItem={renderItem}
         getItemLayout={this._getItemLayout}

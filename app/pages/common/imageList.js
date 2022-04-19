@@ -57,7 +57,7 @@ class ImageList extends React.Component {
   }
 
 
-  getData = async (pageIndex, pageSize) => {
+  _getData = async (pageIndex, pageSize) => {
     const {data} = await getUserList({
       pageIndex,
       pageSize
@@ -71,7 +71,7 @@ class ImageList extends React.Component {
       <View style={[y.uf1, y.ba(1)]}>
         <List
           ref={ref => this.listRef = ref}
-          getData={this.getData}
+          getData={this._getData}
           itemLayoutHeight={51}
           renderItem={(props) => <Item {...props}/>}
         />

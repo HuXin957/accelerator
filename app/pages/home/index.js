@@ -13,16 +13,11 @@ class Home extends React.Component {
   }
 
 
+
   render() {
 
     return (
       <View>
-        <SearchBar
-          hideWhenScrolling={true}
-          obscureBackground={'red'}
-          autoCapitalize={'words'}
-          placeholder={'please'}
-          inputType={'phone'}/>
         <Grid
           gutter={[10, 10]}
           marginLR={20}
@@ -36,7 +31,9 @@ class Home extends React.Component {
             )
           }}
         />
-        <Text onPress={() => {
+        <Text
+          style={[y.h(200)]}
+          onPress={() => {
           this.props.navigation.navigate('ImageList')
         }}>跳转</Text>
       </View>
