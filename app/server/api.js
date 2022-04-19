@@ -44,6 +44,7 @@ service.interceptors.response.use(
         : err.response.data.message;
       return Promise.reject(tips);
     }
+    console.dir(47,JSON.stringify(err))
     return Promise.resolve(new Error("请求超时, 请刷新重试"))
   }
 );

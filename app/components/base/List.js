@@ -1,9 +1,9 @@
 import React, {PureComponent} from "react";
-import {Text, View, RefreshControl, FlatList} from "react-native";
+import {Text, RefreshControl, FlatList} from "react-native";
 import y from 'react-native-line-style';
 import EmptyData from "app/components/empty";
 import Toast from '@huxin957/react-native-toast'
-import UserStore from "../../store/user";
+
 
 const PAGE_SIZE = 2;//每页获取条数
 const DOWN_PAGE_INDEX = 1;//上拉默认页数

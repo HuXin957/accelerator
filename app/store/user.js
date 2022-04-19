@@ -1,5 +1,4 @@
 import {makeAutoObservable} from "mobx";
-import {P} from "app/utils/pagePermissions";
 
 class User {
   permissions = [];//权限
