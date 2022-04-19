@@ -2,7 +2,8 @@ import React, {PureComponent} from "react";
 import {Text, RefreshControl, ScrollView} from "react-native";
 import y from 'react-native-line-style';
 import EmptyData from "app/components/empty";
-import Toast from '@huxin957/react-native-toast'
+import Toast from '@huxin957/react-native-toast';
+
 
 const FIRST = 'FIRST'//首次
 const REFRESH = 'REFRESH';//刷新
@@ -14,7 +15,9 @@ class Detail extends PureComponent {
 
     this.state = {
       loading: false,
-      data: {}
+      data: null,
+      isFirst: true,
+      statusCode: null
     }
   }
 
@@ -28,6 +31,7 @@ class Detail extends PureComponent {
 
   _getData = () => {
     const {getData} = this.props;
+    const {isFirst} = this.state;
 
     this.setState({loading: true});
 
@@ -39,17 +43,35 @@ class Detail extends PureComponent {
         this.setState({
           data
         })
-      })
-      .catch(err => {
 
       })
+      .catch(err => {
+        this.setState({
+          statusCode: err.code
+        })
+
+        if (!isFirst) {
+          Toast.error('加载失败')
+        }
+      })
       .finally(() => {
-        this.setState({loading: false});
+        this.setState({
+          loading: false,
+          isFirst: false
+        });
       })
   }
 
+  //下拉刷新
   _onRefresh = () => {
+    const {onRefresh} = this.props;
 
+    if (onRefresh) {
+      onRefresh();
+      return;
+    }
+
+    this._getData();
   }
 
   //下拉刷新器
@@ -69,15 +91,27 @@ class Detail extends PureComponent {
     )
   }
 
-  render() {
-    const {render} = this.props;
-    const {data} = this.state;
+  _content = () => {
+    const {render, placeholder} = this.props;
+    const {data, statusCode, isFirst} = this.state;
 
+    if (isFirst && placeholder) {
+      return placeholder()
+    }
+
+    if (statusCode && !data) {
+      return <EmptyData code={statusCode}/>
+    }
+
+    return render(data)
+  }
+
+  render() {
     return (
       <ScrollView
         refreshControl={this._refreshControl()}
       >
-        {render(data)}
+        {this._content()}
       </ScrollView>
     );
   }

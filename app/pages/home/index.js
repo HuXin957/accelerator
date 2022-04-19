@@ -34,7 +34,7 @@ class Home extends React.Component {
         <Text
           style={[y.h(200)]}
           onPress={() => {
-          this.props.navigation.navigate('ImageList')
+          this.props.navigation.navigate('DetailDemo')
         }}>跳转</Text>
       </View>
     );
@@ -54,5 +54,3 @@ const data = [
   {name: "张三", age: 19},
   {name: "张三", age: 19},
 ]
-
-

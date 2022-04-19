@@ -104,7 +104,6 @@ class List extends PureComponent {
         })
       })
       .catch(err => {
-        console.log(107,err)
         this.setState({
           statusCode: err.code
         });
@@ -154,10 +153,12 @@ class List extends PureComponent {
   //empty
   _listEmptyComponent = () => {
     const {isFirst} = this.state;
-    const {ListEmptyComponent} = this.props;
+    const {ListEmptyComponent, placeholder} = this.props;
 
     //可在这里做骨架屏或首次渲染loading
-
+    if (placeholder && isFirst) {
+      return placeholder()
+    }
     if (!isFirst) {
       return ListEmptyComponent || <EmptyData code={this.statusCode}/>
     }
