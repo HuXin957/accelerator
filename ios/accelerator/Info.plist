@@ -26,16 +26,20 @@
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
 			<key>localhost</key>
 			<dict>
+				<key>NSAllowsArbitraryLoads</key>
+				<true/>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
 			</dict>
 		</dict>
 	</dict>
-    <key>NSCameraUsageDescription</key>
+	<key>NSCameraUsageDescription</key>
 	<string>App需要您的同意,才能访问相机</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>

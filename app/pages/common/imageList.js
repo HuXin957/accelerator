@@ -2,33 +2,28 @@ import React from 'react';
 import {
   View,
   Text,
-  Platform,
-  FlatList,
-  TextInput,
-  RefreshControl,
-  TouchableWithoutFeedback,
-  Keyboard
 } from 'react-native';
 import y from 'react-native-line-style';
-import {Grid} from 'app/components';
-import {statusHeight} from 'app/utils/platform';
+import {observer} from "mobx-react";
+import {Grid, Button} from 'app/components';
 import withMixin from 'app/utils/withMixin';
 import CameraRoll from "@react-native-community/cameraroll";
 import Permissions from 'app/utils/permissions';
 import {RESULTS} from "react-native-permissions";
 import {List} from "app/components";
-import {SafeAreaView} from "react-native-safe-area-context";
+import {getUserList} from "app/server/userApi";
+import UserStore from "app/store/user";
 
 class ImageList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      test: 'jfkdsfjds'
+      test: false
     }
   }
 
   componentDidMount() {
-    this.listRef.load()
+    // this.listRef.load()
     // this._getImages()
     // this._getAlbums()
   }
@@ -61,58 +56,24 @@ class ImageList extends React.Component {
     });
   }
 
-  api = (pageIndex) => {
-    const data = [
-      {name: 'zs'},
-      {name: 'zs'},
-      {name: 'zs'},
-      {name: 'zs'},
-      {name: 'zs'},
-      {name: 'zs'},
-      {name: 'zs'},
-      {name: 'zs'},
-      {name: 'zs'},
-      {name: 'zs'},
-      {name: 'zs'},
-      {name: 'zs'},
-      {name: 'zs'},
-      {name: 'zs'},
-      {name: 'zs'},
-      {name: 'zs'},
-      {name: 'zs'},
-      {name: 'zs'},
-      {name: 'z32s'},
-    ]
-    return new Promise((resolve => {
-      setTimeout(() => {
-        resolve({
-          data: data.slice((pageIndex - 1) * 10, 10 * pageIndex),
-          total: data.length
-        })
-      }, 1000)
-    }))
-  }
 
   getData = async (pageIndex, pageSize) => {
+    const {data} = await getUserList({
+      pageIndex,
+      pageSize
+    })
 
-    const {data, total} = await this.api(pageIndex, pageSize)
-
-    return {data, total}
+    return {data}
   }
 
   render() {
     return (
-      <View style={[y.uf1]}>
+      <View style={[y.uf1, y.ba(1)]}>
         <List
           ref={ref => this.listRef = ref}
           getData={this.getData}
-          renderItem={({item, index}) => {
-            return (
-              <View style={[y.h(100)]}>
-                <Text>{item.name}</Text>
-              </View>
-            )
-          }}
+          itemLayoutHeight={51}
+          renderItem={(props) => <Item {...props}/>}
         />
       </View>
     )
@@ -120,3 +81,16 @@ class ImageList extends React.Component {
 }
 
 export default withMixin(ImageList)
+
+const Item = observer(({item, index}) => {
+  return (
+    <Button
+      style={[y.ba(1), y.h(50)]}
+      onPress={() => {
+        UserStore.setValue('test', !UserStore.test)
+      }}
+    >
+      <Text>{item.name}</Text>
+    </Button>
+  )
+})

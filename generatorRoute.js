@@ -3,7 +3,7 @@ const path = require('path');
 
 const routes = [];
 const pagesDir = path.resolve(__dirname, './app/pages');
-const routesDir = path.resolve(__dirname, './app/routes/index.js')
+const routesDir = path.resolve(__dirname, './app/routes/api.js')
 
 function getRoutes(filePath) {
   const dirArr = fs.readdirSync(filePath);
