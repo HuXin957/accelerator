@@ -83,9 +83,12 @@ class List extends PureComponent {
 
   //获取数据
   _getData = (pageIndex, loadType) => {
-    const {getData, pageSize = PAGE_SIZE} = this.props;
+    const {getData, placeholder, pageSize = PAGE_SIZE} = this.props;
+    const {isFirst}=this.state;
 
-    this.setState({loading: true});
+    if ((isFirst && !placeholder) || loadType === REFRESH || loadType === DOWN_LOAD) {
+      this.setState({loading: true});
+    }
 
     getData(pageIndex, pageSize)
       .then(({data, total}) => {

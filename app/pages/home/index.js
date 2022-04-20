@@ -15,7 +15,6 @@ class Home extends React.Component {
 
 
   render() {
-
     return (
       <View>
         <Grid
@@ -35,7 +34,7 @@ class Home extends React.Component {
           style={[y.h(200)]}
           onPress={() => {
           this.props.navigation.navigate('DetailDemo')
-        }}>跳转</Text>
+        }}>跳转33</Text>
       </View>
     );
   }

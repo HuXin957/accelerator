@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 import y from 'react-native-line-style';
 import {observer} from "mobx-react";
-import {Grid, Button} from 'app/components';
+import {Grid, Button, Detail} from 'app/components';
 import withMixin from 'app/utils/withMixin';
 import CameraRoll from "@react-native-community/cameraroll";
 import Permissions from 'app/utils/permissions';
@@ -65,7 +65,9 @@ class ImageList extends React.Component {
 
     return {data}
   }
-
+  _placeholder(){
+    return <Text>placehlod</Text>
+  }
   render() {
     return (
       <View style={[y.uf1, y.ba(1)]}>

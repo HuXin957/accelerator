@@ -26,14 +26,16 @@ class Detail extends PureComponent {
   }
 
   load = () => {
-    this._getData()
+    this._getData(FIRST)
   }
 
-  _getData = () => {
-    const {getData} = this.props;
+  _getData = (loadType) => {
+    const {getData, placeholder} = this.props;
     const {isFirst} = this.state;
 
-    this.setState({loading: true});
+    if ((isFirst && !placeholder) || loadType === REFRESH) {
+      this.setState({loading: true});
+    }
 
     getData()
       .then(({data}) => {
@@ -71,7 +73,7 @@ class Detail extends PureComponent {
       return;
     }
 
-    this._getData();
+    this._getData(REFRESH);
   }
 
   //下拉刷新器

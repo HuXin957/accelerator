@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 import y from 'react-native-line-style';
 import {observer} from "mobx-react";
-import {Grid,Detail, Button} from 'app/components';
+import {Grid, Detail, Button} from 'app/components';
 import withMixin from 'app/utils/withMixin';
 import CameraRoll from "@react-native-community/cameraroll";
 import Permissions from 'app/utils/permissions';
@@ -29,19 +29,21 @@ class DetailDemo extends React.Component {
 
   _getData = async () => {
     const {data} = await getUserList({
-      pageIndex:1,
-      pageSize:10
+      pageIndex: 1,
+      pageSize: 10
     })
-
     return {data}
   }
-
+  _placeholder(){
+    return <Text>placehlode</Text>
+  }
   render() {
     return (
       <Detail
         getData={this._getData}
-        render={(data)=>{
-          return <Text>3</Text>
+        placeholder={this._placeholder}
+        render={(data) => {
+          return <Text>33333</Text>
         }}
       />
     )
