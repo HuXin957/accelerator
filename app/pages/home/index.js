@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Platform, ScrollView, StatusBar} from 'react-native';
+import {View, Text, TextInput, ScrollView, StatusBar} from 'react-native';
 import y from 'react-native-line-style';
 import {Grid} from 'app/components';
 import {statusHeight} from 'app/utils/platform';
@@ -11,8 +11,6 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
   }
-
-
 
   render() {
     return (
@@ -35,6 +33,7 @@ class Home extends React.Component {
           onPress={() => {
           this.props.navigation.navigate('DetailDemo')
         }}>跳转33</Text>
+
       </View>
     );
   }

@@ -794,23 +794,20 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@huxin957/react-native-modal@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@huxin957/react-native-modal/-/react-native-modal-1.0.1.tgz#061ec665d50b82ca7da4b5bdc4288c251707116f"
-  integrity sha512-mFQsr5pXQkeipvMiOotuolOgGTuwhEYFkVNFCzv4qRLmybewMYsmWaxONsQf4pRr/QiEXehVK55wIxxqXDMeJw==
-  dependencies:
-    "@huxin957/react-native-portal" "^1.0.0"
-    react-native-line-style "^0.1.1"
+"@huxin957/react-native-modal@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@huxin957/react-native-modal/-/react-native-modal-1.0.2.tgz#c157498605ea6c4f5aca0e358e1b4197bd5c16d7"
+  integrity sha512-2zUvywLTyb6o7YQ/vXB8kj3vpZ23405s1C/rWwmEHM8Jgant+xSEftBV4563PqCrdoca9DjVJhScCcH3Jy60SA==
 
-"@huxin957/react-native-portal@^1.0.0", "@huxin957/react-native-portal@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@huxin957/react-native-portal/-/react-native-portal-1.0.1.tgz#2bd324d470f5d2cb114198151d11ffdba6deb78c"
-  integrity sha512-TTHBPoTlC1aG+BtqJUPT4yClT8G6uqOhaWuIeyBVM6jtjXI+0kJ3ynRaPBAxGAziMEtnIz7WMRU+M6HJpa14SA==
+"@huxin957/react-native-portal@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@huxin957/react-native-portal/-/react-native-portal-1.0.2.tgz#3962af8fc79c11ef9d5e9e689a05de2eef44579c"
+  integrity sha512-CuhRSYWTuyFPSoI6xlkXYL+oLkqai2HCRdRwlgkgDrbTwN/jZEjae4LnQ5SCaXbfHQgkXJH0D8c+ruGTsfUaRA==
 
-"@huxin957/react-native-toast@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@huxin957/react-native-toast/-/react-native-toast-1.0.1.tgz#6108964ade7c898b0ea65acfc260e3c523a6e1a4"
-  integrity sha512-PjG5ppBSiq4BUBG0E06qY/uCg2GkRcprqpyS9PBMByMScS9qkV9Ybt8It6zJUGf+GzLli+efVUUYLmqy/TSYBA==
+"@huxin957/react-native-toast@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@huxin957/react-native-toast/-/react-native-toast-1.0.2.tgz#418e9f05f382b676984d960d09a757c4bf5caa34"
+  integrity sha512-1oYOlLbbklz8xDO0iFt4OZbR0w8Oj3/KXLgiI7donj5Zi8s0fX2HzwfYxX5DaSY3l9ItnvbrjbnjAIgInbABVQ==
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
@@ -1213,6 +1210,11 @@
   version "0.1.11"
   resolved "https://registry.yarnpkg.com/@react-native-community/masked-view/-/masked-view-0.1.11.tgz#2f4c6e10bee0786abff4604e39a37ded6f3980ce"
   integrity sha512-rQfMIGSR/1r/SyN87+VD8xHHzDYeHaJq6elOSCAD+0iLagXkSI2pfA0LmSXP21uw5i3em7GkkRjfJ8wpqWXZNw==
+
+"@react-native-community/netinfo@^8.2.0":
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/@react-native-community/netinfo/-/netinfo-8.2.0.tgz#0bcf2b618c3b0ab72bb5529df3e580af9e6ae96b"
+  integrity sha512-mPMg9Uu2XeMX3tainvCWLhD9FZtdox3fcbPXJINuyFNgEQ2AUhGcoUT1dUpcFZrY4eXYiO9cckPhPHq9lWzSAA==
 
 "@react-native-community/viewpager@^5.0.11":
   version "5.0.11"

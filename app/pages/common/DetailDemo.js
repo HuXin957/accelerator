@@ -49,9 +49,6 @@ class DetailDemo extends React.Component {
              <Text selectable style={[y.fSize(14),{includeFontPadding:false}]}>
                数学
              </Text>
-             <Text selectable style={[y.fSize(14),{includeFontPadding:false}]}>
-               数学
-             </Text>
            </View>
           )
         }}

@@ -31,7 +31,7 @@ class Detail extends PureComponent {
 
   _getData = (loadType) => {
     const {getData, placeholder} = this.props;
-    const {isFirst} = this.state;
+    const {isFirst, data} = this.state;
 
     if ((isFirst && !placeholder) || loadType === REFRESH) {
       this.setState({loading: true});
@@ -95,19 +95,15 @@ class Detail extends PureComponent {
     const {render, placeholder} = this.props;
     const {data, statusCode, isFirst} = this.state;
 
-    if (isFirst && placeholder) {
-      return placeholder()
-    }
+    if (isFirst && placeholder) return placeholder()
 
-    if (statusCode && !data) {
-      return <EmptyData code={statusCode}/>
-    }
+    if (statusCode && !data) return <EmptyData code={statusCode}/>
 
     return render(data)
   }
 
   render() {
-    const {style,contentContainerStyle} = this.props;
+    const {style, contentContainerStyle} = this.props;
 
     return (
       <ScrollView

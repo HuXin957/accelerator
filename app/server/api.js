@@ -1,4 +1,5 @@
 import axios from 'axios';
+import ConfigureStore from "app/store/configure"
 
 const baseURL = 'http://192.168.3.33:3000';
 // const CancelToken = axios.CancelToken;
@@ -38,6 +39,14 @@ service.interceptors.response.use(
     }
   },
   err => {
+    //客户端网络问题，code码待定
+    if (!ConfigureStore.hasNetwork) {
+      err.code = 500
+    }
+    //服务端网络问题
+    if (!err.code) {
+      err.code = 502
+    }
     return Promise.reject(err)
   }
 );

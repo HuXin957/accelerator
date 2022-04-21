@@ -13,7 +13,6 @@ import {RESULTS} from "react-native-permissions";
 import {List} from "app/components";
 import {getUserList} from "app/server/userApi";
 import UserStore from "app/store/user";
-
 class ImageList extends React.Component {
   constructor(props) {
     super(props);

@@ -1,5 +1,4 @@
 import React from 'react';
-import {TouchableWithoutFeedback, Keyboard} from 'react-native';
 import y from 'react-native-line-style';
 import {observer} from "mobx-react";
 import {statusHeight} from "app/utils/platform";
@@ -14,15 +13,13 @@ const withMixin = (WrapComponent, options = {}) => {
     constructor(props) {
       super(props);
       this.checkPermissions();
-
     }
 
     componentDidMount() {
-      if(this.isPass){
+      if (this.isPass) {
         super.componentDidMount && super.componentDidMount();
       }
     }
-
 
     //检查进入页面权限
     checkPermissions = () => {
