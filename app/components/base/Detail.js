@@ -42,10 +42,8 @@ class Detail extends PureComponent {
         if (!data) {
           throw new Error("The 'getData' method must return data");
         }
-        this.setState({
-          data
-        })
 
+        this.setState({data})
       })
       .catch(err => {
         this.setState({
