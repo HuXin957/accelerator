@@ -32,10 +32,11 @@ class DetailDemo extends React.Component {
       pageIndex: 1,
       pageSize: 10
     })
+
     return {data}
   }
   _placeholder(){
-    return <Text>placehlode</Text>
+    return <Text>placeholder</Text>
   }
   render() {
     return (
@@ -43,7 +44,16 @@ class DetailDemo extends React.Component {
         getData={this._getData}
         placeholder={this._placeholder}
         render={(data) => {
-          return <Text>33333</Text>
+          return (
+           <View>
+             <Text selectable style={[y.fSize(14),{includeFontPadding:false}]}>
+               数学
+             </Text>
+             <Text selectable style={[y.fSize(14),{includeFontPadding:false}]}>
+               数学
+             </Text>
+           </View>
+          )
         }}
       />
     )

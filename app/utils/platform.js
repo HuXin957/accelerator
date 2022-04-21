@@ -9,7 +9,6 @@ export const isAndroid = Platform.OS === 'android';
 
 export const statusHeight = setStatusHeight();
 
-
 function setStatusHeight() {
   if (isIOS) {
     return getStatusBarHeight()
@@ -21,3 +20,7 @@ function setStatusHeight() {
 
   return 0
 }
+
+StatusBar.setBarStyle('dark-content')
+StatusBar.setTranslucent(true);
+StatusBar.setBackgroundColor('transparent');

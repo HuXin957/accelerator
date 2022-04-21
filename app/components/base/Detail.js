@@ -81,7 +81,7 @@ class Detail extends PureComponent {
     return (
       <RefreshControl
         title={"Loading"} //android中设置无效
-        colors={'#333'} //android
+        colors={['#333']} //android
         tintColor={'#333'} //ios
         titleColor={'#333'}
         refreshing={loading}
@@ -107,8 +107,12 @@ class Detail extends PureComponent {
   }
 
   render() {
+    const {style,contentContainerStyle} = this.props;
+
     return (
       <ScrollView
+        style={style}
+        contentContainerStyle={contentContainerStyle}
         refreshControl={this._refreshControl()}
       >
         {this._content()}
