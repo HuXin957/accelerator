@@ -794,10 +794,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@huxin957/react-native-modal@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@huxin957/react-native-modal/-/react-native-modal-1.0.2.tgz#c157498605ea6c4f5aca0e358e1b4197bd5c16d7"
-  integrity sha512-2zUvywLTyb6o7YQ/vXB8kj3vpZ23405s1C/rWwmEHM8Jgant+xSEftBV4563PqCrdoca9DjVJhScCcH3Jy60SA==
+"@huxin957/react-native-modal@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@huxin957/react-native-modal/-/react-native-modal-1.0.4.tgz#a53454c9640d26ed25fa4de479698eca2da60653"
+  integrity sha512-HNH8OxMAMDmJGwwtJiuHOi2OkMKDgcIRQCy1s/nf2/sJI1zqI4g4WlZHMx78R/QlQImZ+YxBzneYYOS8ipA6BQ==
 
 "@huxin957/react-native-portal@^1.0.2":
   version "1.0.2"

@@ -33,6 +33,7 @@ class List extends PureComponent {
   }
 
   componentDidMount() {
+    console.log('list===>>>componentDidMount ')
     this.load()
   }
 
@@ -84,7 +85,7 @@ class List extends PureComponent {
   //获取数据
   _getData = (pageIndex, loadType) => {
     const {getData, placeholder, pageSize = PAGE_SIZE} = this.props;
-    const {isFirst}=this.state;
+    const {isFirst} = this.state;
 
     if ((isFirst && !placeholder) || loadType === REFRESH || loadType === DOWN_LOAD) {
       this.setState({loading: true});
@@ -172,6 +173,7 @@ class List extends PureComponent {
   //底部组件
   _listFooterComponent = () => {
     const {hasMore, statusCode} = this.state;
+    const {footerTip} = this.props;
 
     if (!this.dataArr.length) return null
 
@@ -179,18 +181,21 @@ class List extends PureComponent {
       return <Text style={[y.color('#999'), y.uSelfCenter]}>加载失败</Text>
     }
 
-    return <Text style={[y.color('#999'), y.uSelfCenter]}>{hasMore ? '正在加载' : '暂无更多数据'}</Text>
+    return <Text style={[y.color('#999'), y.uSelfCenter]}>{hasMore ? '正在加载' : footerTip || '暂无更多数据'}</Text>
   }
 
 
   //下拉刷新器
   _refreshControl = () => {
     const {loading} = this.state;
+    const {disableRefresh}=this.props;
+
+    if(disableRefresh)return
 
     return (
       <RefreshControl
         title={"Loading"} //android中设置无效
-        colors={'#333'} //android
+        colors={['#333']} //android
         tintColor={'#333'} //ios
         titleColor={'#333'}
         refreshing={loading}
@@ -213,13 +218,12 @@ class List extends PureComponent {
 
   render() {
     const {data} = this.state;
-    const {ListHeaderComponent, renderItem, keyExtractor} = this.props;
+    const {ListHeaderComponent} = this.props;
 
     return (
       <FlatList
         data={data}
-        keyExtractor={keyExtractor}
-        renderItem={renderItem}
+        {...this.props}
         getItemLayout={this._getItemLayout}
         onEndReachedThreshold={0.2}
         //列表为空时渲染该组件

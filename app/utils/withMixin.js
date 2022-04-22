@@ -6,6 +6,11 @@ import {SafeAreaView} from "react-native-safe-area-context";
 import userStore from 'app/store/user';
 import pagePermissions from "app/utils/pagePermissions";
 
+//功能：
+//1、页面鉴权
+//2、observer包裹
+//3、状态栏、安全区域处理
+
 const withMixin = (WrapComponent, options = {}) => {
   class mixin extends WrapComponent {
     isPass = true;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {View, Text, TextInput, ScrollView, StatusBar} from 'react-native';
 import y from 'react-native-line-style';
 import {Grid} from 'app/components';
@@ -6,6 +6,7 @@ import {statusHeight} from 'app/utils/platform';
 import withMixin from 'app/utils/withMixin';
 import userStore from 'app/store/user';
 import {SearchBar} from 'react-native-screens';
+
 
 class Home extends React.Component {
   constructor(props) {
@@ -29,10 +30,10 @@ class Home extends React.Component {
           }}
         />
         <Text
-          style={[y.h(200)]}
+          style={[y.h(200),{textTransform:'uppercase'}]}
           onPress={() => {
-          this.props.navigation.navigate('DetailDemo')
-        }}>跳转33</Text>
+          this.props.navigation.navigate('ImageList')
+        }}>跳转</Text>
 
       </View>
     );

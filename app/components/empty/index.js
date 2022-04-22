@@ -7,6 +7,7 @@ const EmptyData = ({code}) => {
     case 0:
       return <NoData/>;
     case 500:
+    case 502:
       return <NetError/>;
     default:
       return <NoData/>
