@@ -7,7 +7,7 @@ import {
 import y from 'react-native-line-style';
 import {observer} from "mobx-react";
 import Modal from "@huxin957/react-native-modal";
-import {Grid, Button, Detail} from 'app/components';
+import {Grid, Button, ImagePreview, Detail} from 'app/components';
 import withMixin from 'app/utils/withMixin';
 import CameraRoll from "@react-native-community/cameraroll";
 import Permissions from 'app/utils/permissions';
@@ -45,7 +45,6 @@ class ImageList extends React.Component {
     })
 
     const data = res.edges.map(v => v.node);
-
     this.after = res.page_info.end_cursor;
 
     return {data}
@@ -102,27 +101,39 @@ class ImageList extends React.Component {
     }
 
     return (
-      <Button
-        key={index}
-        style={[y.upr, y.ba(1), y.bdColor('rgba(0,0,0,.9)'), y.h_(y.winw / 4), y.wRatio(25)]}
-        onPress={() => {
-          //预览
-          this.previewImg = item.image.uri;
-          this.setState({visible: true});
-        }}
-      >
-        <Image style={[y.w100, y.h100]} source={{uri: item.image.uri}}/>
+      <>
+        {!index ?
+          <Button
+            onPress={()=>{
+
+            }}
+            style={[y.ba(1), y.ujc, y.uac, y.bdColor('rgba(0,0,0,.9)'), y.h_(y.winw / 4), y.wRatio(25)]}
+          >
+            <Text style={[y.color('#fff')]}>拍照</Text>
+          </Button>
+          : null}
         <Button
-          onPress={handleSelect}
-          style={[y.upa, y.pl(10), y.pb(10), y.pt(5), y.pr(5), y.right(0), y.top(0)]}>
-          {
-            isChecked ?
-              <Image style={[y.size(20)]} source={require('app/images/checked.png')}/>
-              :
-              <View style={[y.size(18), y.ba(2), y.bdColor('#fff'), y.radiusA(9)]}/>
-          }
+          key={index}
+          style={[y.upr, y.ba(1), y.bdColor('rgba(0,0,0,.9)'), y.h_(y.winw / 4), y.wRatio(25)]}
+          onPress={() => {
+            //预览
+            this.previewImg = item.image.uri;
+            this.setState({visible: true});
+          }}
+        >
+          <Image style={[y.w100, y.h100]} source={{uri: item.image.uri}}/>
+          <Button
+            onPress={handleSelect}
+            style={[y.upa, y.pl(10), y.pb(10), y.pt(5), y.pr(5), y.right(0), y.top(0)]}>
+            {
+              isChecked ?
+                <Image style={[y.size(20)]} source={require('app/images/checked.png')}/>
+                :
+                <View style={[y.size(18), y.ba(2), y.bdColor('#fff'), y.radiusA(9)]}/>
+            }
+          </Button>
         </Button>
-      </Button>
+      </>
     )
   }
 
@@ -130,10 +141,13 @@ class ImageList extends React.Component {
     const {visible} = this.state;
     return (
       <>
+        <View>
+          <Text>头部</Text>
+        </View>
         <List
           ref={ref => this.listRef = ref}
           style={[y.bgColor('rgba(0,0,0,.9)')]}
-          pageSize={20}
+          pageSize={30}
           numColumns={4}
           getData={this._getImages}
           itemLayoutHeight={51}
@@ -154,26 +168,4 @@ class ImageList extends React.Component {
 
 export default withMixin(ImageList);
 
-const ImagePreview = ({visible, onClose, src}) => (
-  <Modal
-    animationType={'fade'}
-    visible={visible}
-    onClose={onClose}
-  >
-    <View style={[y.w_(y.winw), y.ba(10), y.bdColor('#fff')]}>
-      <Image style={[y.h(300),]} source={{uri: src}}/>
-    </View>
-  </Modal>
-)
 
-const Item = memo(observer(({item, index}) => {
-  return (
-    <Button
-      style={[y.ba(1), y.bdColor('rgba(0,0,0,.9)'), y.h_(y.winw / 4), y.wRatio(25)]}
-      onPress={() => {
-      }}
-    >
-      <Image style={[y.w100, y.h100]} source={{uri: item.image.uri}}/>
-    </Button>
-  )
-}))
