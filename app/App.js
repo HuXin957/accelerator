@@ -8,12 +8,8 @@ import ConfigureStore from 'app/store/configure'
 const App = () => {
   useEffect(() => {
     return NetInfo.addEventListener(({isConnected}) => {
-      if (!isConnected) {
-        Toast.error('网络连接失败');
-        ConfigureStore.setValue('hasNetwork', false)
-        return
-      }
-      ConfigureStore.setValue('hasNetwork', true)
+      ConfigureStore.setValue('hasNetwork', isConnected);
+      !isConnected && Toast.error('网络连接失败');
     });
   }, [])
 

@@ -38,14 +38,14 @@ export default class Grid extends Component {
   }
 
   _renderCells() {
-    const {gutter = [], columnCount = 1} = this.props;
-    return this.props.dataSource.map((data, index, dataList) => {
+    const {gutter = [], dataSource = [], renderCell = () => null, columnCount = 1} = this.props;
+    return dataSource.map((data, index, dataList) => {
       //最后一排
       const isEnd = (Math.ceil(dataList.length / columnCount) - 1) * columnCount <= index;
       return (
         <View style={[y.w_(this._columnWidth), y.pr(gutter[0] || 0), y.pb(isEnd ? 0 : (gutter[1] || 0))]}
               key={`cell-${(data.key != null) ? data.key : index}`}>
-          {this.props.renderCell(data, index, dataList)}
+          {renderCell(data, index, dataList)}
         </View>
       )
     })

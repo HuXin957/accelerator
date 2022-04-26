@@ -5,16 +5,13 @@ import {
   Image,
 } from 'react-native';
 import y from 'react-native-line-style';
-import {observer} from "mobx-react";
-import Modal from "@huxin957/react-native-modal";
-import {Grid, Button, ImagePreview, Detail} from 'app/components';
+import {Button, ImagePreview} from 'app/components';
 import withMixin from 'app/utils/withMixin';
 import CameraRoll from "@react-native-community/cameraroll";
 import Permissions from 'app/utils/permissions';
 import {RESULTS} from "react-native-permissions";
 import {List} from "app/components";
 import {getUserList} from "app/server/userApi";
-import UserStore from "app/store/user";
 
 //它不能是一个页面，得做成一个组件
 class ImageList extends React.Component {
@@ -30,13 +27,14 @@ class ImageList extends React.Component {
     }
   }
 
-  componentDidMount() {
-    // this.listRef.load()
-    // this._getImages()
-    // this._getAlbums()
-  }
-
   _getImages = async (pageIndex, pageSize) => {
+    await Permissions.PHOTO_LIBRARY().catch(e => {
+      if (e.code === RESULTS.BLOCKED) {
+        Permissions.openSettings();
+      }
+      throw e;
+    });
+
     const res = await CameraRoll.getPhotos({
       first: pageSize,
       assetType: 'Photos',
@@ -48,20 +46,6 @@ class ImageList extends React.Component {
     this.after = res.page_info.end_cursor;
 
     return {data}
-  }
-
-  _getAlbums = () => {
-    Permissions.PHOTO_LIBRARY().catch(e => {
-      if (e.code === RESULTS.BLOCKED) {
-        Permissions.openSettings();
-      }
-      throw e;
-    });
-    CameraRoll.getAlbums({
-      assetType: 'All',
-    }).then(albums => {
-      console.log('albums', albums)
-    });
   }
 
 
@@ -104,17 +88,17 @@ class ImageList extends React.Component {
       <>
         {!index ?
           <Button
-            onPress={()=>{
+            onPress={() => {
 
             }}
-            style={[y.ba(1), y.ujc, y.uac, y.bdColor('rgba(0,0,0,.9)'), y.h_(y.winw / 4), y.wRatio(25)]}
+            style={[y.bgColor('#eee'), y.ba(1), y.ujc, y.uac, y.bdColor('#fff'), y.h_(y.winw / 4), y.wRatio(25)]}
           >
-            <Text style={[y.color('#fff')]}>拍照</Text>
+            <Image style={[y.size(40)]} source={require('app/images/picture.png')}/>
           </Button>
           : null}
         <Button
           key={index}
-          style={[y.upr, y.ba(1), y.bdColor('rgba(0,0,0,.9)'), y.h_(y.winw / 4), y.wRatio(25)]}
+          style={[y.upr, y.ba(1), y.bdColor('#fff'), y.h_(y.winw / 4), y.wRatio(25)]}
           onPress={() => {
             //预览
             this.previewImg = item.image.uri;
@@ -137,23 +121,20 @@ class ImageList extends React.Component {
     )
   }
 
+
   render() {
     const {visible} = this.state;
     return (
       <>
-        <View>
-          <Text>头部</Text>
-        </View>
         <List
           ref={ref => this.listRef = ref}
-          style={[y.bgColor('rgba(0,0,0,.9)')]}
+          style={[y.bgColor('#eee')]}
           pageSize={30}
           numColumns={4}
           getData={this._getImages}
           itemLayoutHeight={51}
           disableRefresh={true}
           footerTip={'已加载全部图片'}
-          // renderItem={(props) => <Item {...props}/>}
           renderItem={this._renderItem}
         />
         <ImagePreview

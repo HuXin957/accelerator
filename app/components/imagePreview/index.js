@@ -6,13 +6,14 @@ import React from "react";
 
 const ImagePreview = ({visible, onClose, src}) => (
   <Modal
-    animationType={'fade'}
+    animationType={'none'}
     visible={visible}
     onClose={onClose}
+    style={[y.ujc]}
   >
-    <View style={[y.w_(y.winw), y.ba(10), y.bdColor('#fff')]}>
-      <Image style={[y.h(300),]} source={{uri: src}}/>
-    </View>
+      <View style={[y.bdColor('#fff'),y.ba(10)]}>
+        <Image style={[y.h(300)]} source={{uri: src}}/>
+      </View>
   </Modal>
 )
 

@@ -96,7 +96,6 @@ class List extends PureComponent {
         if (!Array.isArray(data)) {
           throw new Error("'data' must be a array")
         }
-
         const hasMore = total ? this.dataArr.length < total : data.length === pageSize;
 
         //数据拼装
@@ -108,6 +107,7 @@ class List extends PureComponent {
         })
       })
       .catch(err => {
+
         this.setState({
           statusCode: err.code
         });

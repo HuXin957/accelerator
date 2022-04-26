@@ -39,6 +39,7 @@ class DetailDemo extends React.Component {
     return <Text>placeholder</Text>
   }
   render() {
+    console.log(this.isPass)
     return (
       <Detail
         getData={this._getData}
