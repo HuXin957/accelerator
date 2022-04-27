@@ -794,10 +794,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@huxin957/react-native-modal@^1.0.7":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@huxin957/react-native-modal/-/react-native-modal-1.0.7.tgz#2167ca2aeaa66b1d916f5d100783c7e4a11ea06b"
-  integrity sha512-KA+igIPX7hCJ2h+K04C5V94CpGgrpEzzJap9459IMybwSf27OOpTCor7T0lkBhdHyTdK8jRT14GiEZMGimXTlg==
+"@huxin957/react-native-modal@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@huxin957/react-native-modal/-/react-native-modal-1.0.8.tgz#4c111ae5fe6dd0a1cf577d021f7af63ba8701b24"
+  integrity sha512-+nEcC8OwzgD9Vx1XEtUgapXTtcCgiFzD2zKtdFiQa7zcHFb2UFAnOGbJ+CkSC+4132lJCeQJIXgPh9va9OiLmw==
 
 "@huxin957/react-native-portal@^1.0.2":
   version "1.0.2"
@@ -5664,6 +5664,11 @@ react-native-device-info@^8.7.0:
   version "8.7.0"
   resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-8.7.0.tgz#0873d93950ac651b754f62965bb6f18059431c3c"
   integrity sha512-Zr0JNHSEPy2RWObWwUp9npTEWSG5HyY+nR/mRkf6ZTU5zd8oskarnPcCxAgwYhJbvshHSZbZIDRxCVCskXSpEA==
+
+react-native-fast-image@^8.5.11:
+  version "8.5.11"
+  resolved "https://registry.yarnpkg.com/react-native-fast-image/-/react-native-fast-image-8.5.11.tgz#e3dc969d0e4e8df026646bf18194465aa55cbc2b"
+  integrity sha512-cNW4bIJg3nvKaheG8vGMfqCt5LMWX9MS5+wMudgKIHbGO51spRr4sgnlhVgwHLcZ5aeNOVJ8CPRxDIWKRq/0QA==
 
 react-native-gesture-handler@^1.10.3:
   version "1.10.3"
