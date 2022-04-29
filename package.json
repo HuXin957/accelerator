@@ -11,7 +11,7 @@
   },
   "author": "huqiang",
   "dependencies": {
-    "@huxin957/react-native-modal": "^1.0.8",
+    "@huxin957/react-native-modal": "^1.0.9",
     "@huxin957/react-native-portal": "^1.0.2",
     "@huxin957/react-native-toast": "^1.0.2",
     "@react-native-community/async-storage": "^1.12.1",
