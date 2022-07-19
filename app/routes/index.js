@@ -8,7 +8,7 @@ import Setting from 'app/pages/my/setting';
 const routes = [
   {
     name: "DetailDemo",
-    component: DetailDemo
+    component: DetailDemo,
   },{
     name: "ImageList",
     component: ImageList

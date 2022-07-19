@@ -794,10 +794,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@huxin957/react-native-modal@^1.0.8":
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@huxin957/react-native-modal/-/react-native-modal-1.0.8.tgz#4c111ae5fe6dd0a1cf577d021f7af63ba8701b24"
-  integrity sha512-+nEcC8OwzgD9Vx1XEtUgapXTtcCgiFzD2zKtdFiQa7zcHFb2UFAnOGbJ+CkSC+4132lJCeQJIXgPh9va9OiLmw==
+"@huxin957/react-native-modal@^1.0.9":
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/@huxin957/react-native-modal/-/react-native-modal-1.0.10.tgz#a83b3d31fc30ff431758354a70dc3878c7cdee1e"
+  integrity sha512-3KhqyeSkKpY8onLVvOzrFadJ3wvmwpuDLsPAdH9+jz9werETgrt9YKMR8s6/3lgkmxNJLTZFYK9GUHdyIU2y4A==
 
 "@huxin957/react-native-portal@^1.0.2":
   version "1.0.2"
@@ -1215,6 +1215,11 @@
   version "8.2.0"
   resolved "https://registry.yarnpkg.com/@react-native-community/netinfo/-/netinfo-8.2.0.tgz#0bcf2b618c3b0ab72bb5529df3e580af9e6ae96b"
   integrity sha512-mPMg9Uu2XeMX3tainvCWLhD9FZtdox3fcbPXJINuyFNgEQ2AUhGcoUT1dUpcFZrY4eXYiO9cckPhPHq9lWzSAA==
+
+"@react-native-community/slider@^4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@react-native-community/slider/-/slider-4.2.2.tgz#06a0de89c26c6bd03d95798b777db1872b60c066"
+  integrity sha512-C1ldx1ypQo+uDWx78TUBG0evLVopKYHK2mQencl+vxi4ebMTL+ipJv5MF5mEvmZWLUOAMm5AsoQNHChYUdyWrQ==
 
 "@react-native-community/viewpager@^5.0.11":
   version "5.0.11"
