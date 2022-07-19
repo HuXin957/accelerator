@@ -93,7 +93,7 @@ class Home extends React.Component {
           <Text  style={[{includeFontPadding:false},y.fSize(22)]}>跳转</Text>
           <Text  style={[{includeFontPadding:false},y.fSize(22)]}>跳转</Text>
           <Text style={[y.fSize(22)]}>跳转</Text>
-          <Text style={[y.fSize(22)]}>跳转</Text>
+          <Text style={[y.fSize(22)]}>test</Text>
         </Button>
       </View>
     )
