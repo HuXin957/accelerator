@@ -25,6 +25,7 @@
     "@react-navigation/native": "^5.9.4",
     "@react-navigation/stack": "^5.14.4",
     "axios": "^0.26.1",
+    "circular-json": "^0.5.9",
     "mobx": "^6.2.0",
     "mobx-react": "^7.1.0",
     "moment": "^2.29.1",

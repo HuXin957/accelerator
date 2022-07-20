@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, PanResponder, NativeModules} from 'react-native';
+import {View, Text, TextInput, PanResponder, NativeModules} from 'react-native';
 import y from 'react-native-line-style';
 import {Grid, Button} from 'app/components';
 import Slider from '@react-native-community/slider';
@@ -7,6 +7,7 @@ import {statusHeight} from 'app/utils/platform';
 import withMixin from 'app/utils/withMixin';
 import ConfigureStore from 'app/store/configure';
 import {SearchBar} from 'react-native-screens';
+import CircularJSON from 'circular-json';
 
 const {ToastExample} = NativeModules
 
@@ -23,7 +24,9 @@ class Home extends React.Component {
         top: 0,
         left: 0
       },
-      backColor: '#333'
+      backColor: '#333',
+      value: '',
+      result: []
     }
 
     this._panResponder = PanResponder.create({
@@ -74,9 +77,31 @@ class Home extends React.Component {
     });
   }
 
+  search = (text) => {
+    let list = ['瓜子二手车', "我是瓜子二手车的车瓜子二手车", "二手车瓜子"];
+
+    const list_ = list.map(item => {
+      const ui = []
+      const newArr = item.split(text)
+      for (let i = 0; i < newArr.length; i++) {
+        const v = newArr[i]
+
+        if (i!== 0) {
+          ui.push(<Text style={[y.color('red')]}>{text}</Text>)
+        }
+
+        ui.push(<Text>{v}</Text>)
+
+      }
+      return <View style={[y.udr]}>{ui}</View>
+    })
+    this.setState({
+      result: list_
+    })
+  }
 
   render() {
-    const {position} = this.state;
+    const {position, result, value} = this.state;
     return (
       <View style={[y.uf1, y.upr]}>
         {/*<View*/}
@@ -84,22 +109,21 @@ class Home extends React.Component {
         {/*  style={[y.ba(1), y.h_(100), y.w_(100), y.bgColor(this.state.backColor), y.ujc, y.uac, y.upa, y.top(position.top), y.left_(position.left)]}>*/}
         {/*  <Text>拖动我</Text>*/}
         {/*</View>*/}
-        <Button
-          style={[y.ba(1),y.size(200)]}
-          onPress={()=>{
-            console.log(this.props.navigation.jumpTo)
-        }}>
-          <Text  style={[{includeFontPadding:false,letterSpacing:12},y.fSize(22)]}>跳转</Text>
-          <Text  style={[{includeFontPadding:false},y.fSize(22)]}>跳转</Text>
-          <Text  style={[{includeFontPadding:false},y.fSize(22)]}>跳转</Text>
-          <Text style={[y.fSize(22)]}>test</Text>
-          <Text style={[y.fSize(22)]}>test</Text>
-        </Button>
+        <TextInput
+          value={value}
+          onChangeText={value => {
+            this.search(value)
+            this.setState({value})
+          }}
+          style={[y.ba(1)]}
+        />
+        <View>
+          {result.map(V => V)}
+        </View>
       </View>
     )
   }
 }
-
 
 
 export default withMixin(Home)
